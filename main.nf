@@ -6,6 +6,7 @@ process sayHello {
   output:
     stdout
   script:
+  // Comment
     """
     echo '$x world!'
     """
