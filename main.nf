@@ -12,5 +12,6 @@ process sayHello {
 }
 
 workflow {
-  Channel.of('Bonjour', 'Ciao', 'Hello', 'Hola') | sayHello | view
+  // Create input channel from input file provided through params.input
+  Channel.fromPath(params.input).splitText().map { it.trim() } | sayHello | view
 }
